@@ -1,0 +1,28 @@
+// absolute nav over hero
+
+.site-header {
+    background: rgba(0, 0, 0, 0.2);
+    @include center-absolute();
+    .container {
+        display: grid;
+        grid-template-areas: "logo navi";
+        grid-gap: 2rem;
+        grid-template-columns: minmax(150px, auto) 1fr;
+    }
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.site-nav {
+    grid-area: navi;
+    display: flex;
+    .navlink {
+        @include flex-center();
+    }
+    // .navlink-last {
+    //     grid-column-end: -1;
+    // }
+}
+

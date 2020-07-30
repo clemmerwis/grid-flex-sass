@@ -1,0 +1,7 @@
+
+.container {
+    max-width: 1200px;
+    @include below(1300) {
+        max-width: 90vw;
+    }
+}

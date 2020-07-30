@@ -1,0 +1,62 @@
+// transition
+@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+  }
+  
+//   breakpoint
+  @mixin below($breakpoint) {
+    @media (max-width: $breakpoint + px) {@content;}
+  }
+  
+  @mixin above($breakpoint) {
+    @media (min-width: $breakpoint + px) {@content;}
+  }
+  
+  @mixin between($smallerbreakpoint, $largerbreakpoint) {
+    @media (min-width: $smallerbreakpoint + px) and (max-width: $largerbreakpoint + px) {@content;}
+  }
+
+  // Hover
+@mixin hover() {
+    &:hover { @content; }
+}
+
+@mixin hover-focus() {
+    &:hover,
+    &:focus {
+      @content;
+    }
+}
+  
+  @mixin plain-hover-focus() {
+    &,
+    &:hover,
+    &:focus {
+      @content;
+    }
+}
+  
+  @mixin hover-focus-active() {
+    &:hover,
+    &:focus,
+    &:active {
+      @content;
+    }
+}
+
+// positioning
+@mixin center-absolute() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
